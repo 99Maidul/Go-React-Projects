@@ -1,10 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 
-function HelloWorld() {
+function HelloWorld(props) {
+    const [isTrue, setisTrue] = useState(true)
     return (
         <Fragment>
-            <h1>Hello World</h1>
-            <p>This is a paragraph</p>
+            <hr />
+            <h1>{props.msg}</h1>
+            <hr />
+            {isTrue &&
+                <Fragment>
+                    <p>The current value of isTrue is true</p>
+                </Fragment>
+            }
         </Fragment>
     )
 }
