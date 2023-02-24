@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import HelloWorld from './HelloWorld';
+import App from './App.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -9,7 +9,7 @@ root.render(
     <div className='container'>
       <div className='row'>
         <div className='col'>
-          <HelloWorld msg="Hello again!" />
+          <App msg="Hello again!" />
         </div>
       </div>
     </div>
