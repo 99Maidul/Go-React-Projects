@@ -1,0 +1,12 @@
+.sign-in-and-sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  
+    .sign-in,
+    .sign-up {
+      width: 40%;
+      margin: 0 10px;
+    }
+  }
