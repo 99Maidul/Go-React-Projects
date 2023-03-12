@@ -79,7 +79,7 @@ class CreditCardForm extends React.Component {
     }
 
     async handleSubmit(event) {
-        
+
         event.preventDefault();
         console.log("Handle submit called, with name: " + this.state.value);
 

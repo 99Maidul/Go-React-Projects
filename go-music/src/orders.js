@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Order(props) {
     return (
         <div className="col-12">
             <div className="card text-center">
-                <div className="card-header"><h5>{props.productname}</h5></div>
+                <div className="card-header">
+                    <h5>{props.productname}</h5>
+                </div>
                 <div className="card-body">
                     <div className="row">
                         <div className="mx-auto col-6">
-                            <img src={props.img} alt={props.imgalt} className="img-thumbnail float-left" />
+                            <img
+                                src={props.img}
+                                alt={props.imgalt}
+                                className="img-thumbnail float-left"
+                            />
                         </div>
                         <div className="col-6">
                             <p className="card-text">{props.desc}</p>
@@ -27,30 +33,14 @@ function Order(props) {
     );
 }
 
-export default class OrderContainer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            orders: []
-        };
-    }
+export default function OrderContainer(props) {
+    const [orders, setOrders] = useState([]);
 
-    componentDidMount() {
-        fetch(this.props.location)
+    useEffect(() => {
+        fetch(props.location)
             .then(res => res.json())
-            .then((result) => {
-                this.setState({
-                    orders: result.orders
-                });
-            });
-    }
+            .then(result => setOrders(result.orders));
+    }, [props.location]);
 
-    render() {
-
-        return (
-            <div className="row mt-5">
-                {this.state.orders.map(order => <Order {...order} />)}
-            </div>
-        );
-    }
+    return <div className="row mt-5">{orders.map(order => <Order {...order} />)}</div>;
 }

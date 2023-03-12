@@ -40,7 +40,7 @@ class SingInForm extends React.Component {
                     <h5 className="mb-4">Basic Info</h5>
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>
-                        <input name="email" type="email" className="form-control" id="email"  onChange={this.handleChange}/>
+                        <input name="email" type="email" className="form-control" id="email" onChange={this.handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="pass">Password:</label>
@@ -99,20 +99,20 @@ class RegistrationForm extends React.Component {
                     <h5 className="mb-4">Registration</h5>
                     <div className="form-group">
                         <label htmlFor="username">User Name:</label>
-                        <input id="username" name='username' className="form-control" placeholder='John Doe' type='text'  onChange={this.handleChange} />
+                        <input id="username" name='username' className="form-control" placeholder='John Doe' type='text' onChange={this.handleChange} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>
-                        <input type="email" name='email' className="form-control" id="email"  onChange={this.handleChange} />
+                        <input type="email" name='email' className="form-control" id="email" onChange={this.handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="pass">Password:</label>
-                        <input type="password" name='pass1' className="form-control" id="pass1"  onChange={this.handleChange} />
+                        <input type="password" name='pass1' className="form-control" id="pass1" onChange={this.handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="pass">Confirm password:</label>
-                        <input type="password" name='pass2' className="form-control" id="pass2"  onChange={this.handleChange} />
+                        <input type="password" name='pass2' className="form-control" id="pass2" onChange={this.handleChange} />
                     </div>
                     <div className="form-row text-center">
                         <div className="col-12 mt-2">
@@ -149,18 +149,18 @@ export class SignInModalWindow extends React.Component {
         }
         return (
             <Modal id="register" tabIndex="-1" role="dialog" isOpen={this.props.showModal} toggle={this.props.toggle}>
-            <div role="document">
-                <ModalHeader toggle={this.props.toggle} className="bg-success text-white">
-                    Sign in
-                    {/*<button className="close">
+                <div role="document">
+                    <ModalHeader toggle={this.props.toggle} className="bg-success text-white">
+                        Sign in
+                        {/*<button className="close">
                         <span aria-hidden="true">&times;</span>
                      </button>*/}
-                </ModalHeader>
-                <ModalBody>
-                    {modalBody}
-                </ModalBody>
-            </div>
-        </Modal>
+                    </ModalHeader>
+                    <ModalBody>
+                        {modalBody}
+                    </ModalBody>
+                </div>
+            </Modal>
         );
     }
 }
@@ -168,7 +168,7 @@ export class SignInModalWindow extends React.Component {
 export function BuyModalWindow(props) {
     return (
         <Modal id="buy" tabIndex="-1" role="dialog" isOpen={props.showModal} toggle={props.toggle}>
-        <div role="document">
+            <div role="document">
                 <ModalHeader toggle={props.toggle} className="bg-success text-white">
                     Buy Item
                 </ModalHeader>
