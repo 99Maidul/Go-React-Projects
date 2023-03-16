@@ -8,6 +8,7 @@ import(
 "context"
 "github.com/joho/godotenv"
 "go.mongodb.org/mongo-driver/mongo"
+"go/mongodb.org/mongo-driver/mongo/options"
 )
 
 func BDinstance() *mongo.Client{
@@ -34,7 +35,7 @@ func BDinstance() *mongo.Client{
 
 var Client *mongo.client = BDinstance()
 
-func OpenCollection(client *mongo.Client, collection string) *mongo.Collection{
+func OpenCollection(client *mongo.Client, collectionName string) *mongo.Collection{
 	var collection *mongo.Collection =client.Database("cluster0").Collection(collectionName)
 	return collection
 }
