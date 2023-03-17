@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import Input from './form/input.js';
 
 
@@ -6,11 +7,24 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const { setJwtToken } = useOutletContext();
+    const { setAlertClassName } = useOutletContext();
+    const { setAlertMessage } = useOutletContext();
+
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("email/pass", email, password)
 
-        if (email == 'admin@example.com') {
-            alert("Login Successful");
+        if (email === "admin@example.com") {
+            setJwtToken("abc");
+            setAlertClassName("d-none")
+            setAlertMessage("")
+            navigate("/")
+        } else {
+            setAlertClassName("alert alert-danger")
+            setAlertMessage("Invalid credentials")
         }
     }
     return (
