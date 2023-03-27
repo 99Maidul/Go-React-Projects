@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/99Maidul/blog-backend/models"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -20,6 +21,11 @@ func Connect() {
 	database, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
+	} else {
+		log.Println("Database connected")
 	}
 	DB = database
+	database.AutoMigrate(
+		&models.User{},
+	)
 }
