@@ -8,6 +8,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
 
 	"github.com/99Maidul/blog-backend/database"
@@ -108,4 +109,8 @@ func Login(c *fiber.Ctx) error {
 		"message": "Logged in successfully",
 		"user":    user,
 	})
+}
+
+type Claims struct {
+	jwt.StandardClaims
 }
