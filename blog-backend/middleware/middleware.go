@@ -1,5 +1,7 @@
 package middleware
 
+//Contol access to the routes
+
 import (
 	"github.com/99Maidul/blog-backend/util"
 	"github.com/gofiber/fiber/v2"

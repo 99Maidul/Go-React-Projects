@@ -59,6 +59,7 @@ func Register(c *fiber.Ctx) error {
 		Email:     strings.TrimSpace(data["email"].(string)),
 	}
 	// Hash and set the password for the new user by using SetPassword function from user.go
+	// https://gowebexamples.com/password-hashing/
 	user.SetPassword(data["password"].(string))
 	err := database.DB.Create(&user)
 	if err != nil {

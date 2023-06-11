@@ -40,6 +40,6 @@ func Parsejwt(cookie string) (string, error) {
 	if err != nil || !token.Valid {
 		return "", err
 	}
-	claims := token.Claims.(*Claims)
+	claims := token.Claims.(*jwt.StandardClaims)
 	return claims.Issuer, nil
 }
